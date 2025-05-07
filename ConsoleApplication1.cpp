@@ -1,5 +1,10 @@
 ﻿#include <iostream>
+#include <vector>
+#include <algorithm>
 
+#include "Counter.h"
+
+/*
 class Get_sum {
 public:
     Get_sum(int* ar, int lenght): m_pAr(ar), m_length(lenght){};
@@ -47,9 +52,13 @@ private:
     int m_length;
 };
 
+*/
+
+
 
 int main()
 {
+    /*
     int inputArray[]{ 4, 1, 3, 6, 25, 54 };
     int  length = sizeof(inputArray) / sizeof(int);
     std::cout << "[IN]: ";
@@ -67,5 +76,11 @@ int main()
 
     Get_count get_count(inputArray, length);
     std::cout << "[OUT]: get_count() = " << get_count();
+    */
+
+    std::vector<int> numbers = { 4, 1, 3, 6, 25, 54 };
+    Counter counter = std::for_each(numbers.begin(), numbers.end(), Counter());
+    std::cout << "[OUT]: get_sum() = " << counter.get_sum() << std::endl;
+    std::cout << "[OUT]: get_count() = " << counter.get_count() << std::endl;
     
 }
